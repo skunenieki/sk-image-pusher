@@ -30,7 +30,7 @@ $ch->queue_bind($queue, $exchange);
  */
 function process_message($msg)
 {
-    error_log('Triggering pusher event!')
+    error_log('Triggering pusher event!');
     $pusher->trigger('sk-image-display', 'display', $msg->body, null, false, true);
     sleep(60);
 
