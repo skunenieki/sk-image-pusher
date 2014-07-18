@@ -25,7 +25,7 @@ $ch->queue_declare($queue, false, true, false, false);
 $ch->exchange_declare($exchange, 'direct', false, true, false);
 $ch->queue_bind($queue, $exchange);
 
-$ig = $instagram = new Instagram();
+$ig = new Instagram(getenv('INSTAGRAM_API_KEY'));
 
 /**
  * @param \PhpAmqpLib\Message\AMQPMessage $msg
