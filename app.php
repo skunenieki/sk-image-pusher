@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+require_once 'vendor/cosenary/instagram/instagram.class.php';
 
 use PhpAmqpLib\Connection\AMQPConnection;
 
