@@ -2,7 +2,8 @@
   "require": {
     "hhvm": "3.*",
     "videlalvaro/php-amqplib": "2.2.*",
-    "pusher/pusher-php-server": "2.*"
+    "pusher/pusher-php-server": "2.*",
+    "cosenary/instagram": "dev-master"
   },
   "minimum-stability": "dev"
 }

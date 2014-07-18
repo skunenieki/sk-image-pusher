@@ -25,17 +25,20 @@ $ch->queue_declare($queue, false, true, false, false);
 $ch->exchange_declare($exchange, 'direct', false, true, false);
 $ch->queue_bind($queue, $exchange);
 
+$ig = $instagram = new Instagram();
+
 /**
  * @param \PhpAmqpLib\Message\AMQPMessage $msg
  */
 function process_message($msg)
 {
-    global $pusher;
+    global $pusher, $ig;
     error_log('Triggering pusher event!');
     $message = json_decode($msg->body, true);
 
     if ($message['source'] == 'ig') {
-       // get IG data here using IG API
+       $igData = $ig->getTagMedia('skunenieki', 1);
+       error_log($igData);
        $message = array(
            'source' => 'ig',
            'time'   => 12345,

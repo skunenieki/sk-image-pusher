@@ -3,8 +3,51 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "50842e6f1fd493881e607b198ff0e63d",
+    "hash": "9c1a13edaf37c4d46d79b4f560595357",
     "packages": [
+        {
+            "name": "cosenary/instagram",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cosenary/Instagram-PHP-API.git",
+                "reference": "d13b952feac0cccb3bface9a035fe5d7362f775d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cosenary/Instagram-PHP-API/zipball/d13b952feac0cccb3bface9a035fe5d7362f775d",
+                "reference": "d13b952feac0cccb3bface9a035fe5d7362f775d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Instagram": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Metz",
+                    "email": "christian-metz1@gmx.net",
+                    "homepage": "http://metzweb.net"
+                }
+            ],
+            "description": "An easy-to-use PHP Class for accessing Instagram's API.",
+            "homepage": "https://github.com/cosenary/Instagram-PHP-API",
+            "keywords": [
+                "api",
+                "instagram"
+            ],
+            "time": "2014-02-13 13:40:03"
+        },
         {
             "name": "pusher/pusher-php-server",
             "version": "v2.1.3",
@@ -99,9 +142,9 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "cosenary/instagram": 20
+    },
     "platform": {
         "hhvm": "3.*"
     },
