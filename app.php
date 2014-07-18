@@ -32,7 +32,7 @@ function process_message($msg)
 {
     global $pusher;
     error_log('Triggering pusher event!');
-    $message = json_decode($msg->body);
+    $message = json_decode($msg->body, true);
 
     if ($message['source'] == 'ig') {
        // get IG data here using IG API
