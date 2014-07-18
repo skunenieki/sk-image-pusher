@@ -39,7 +39,7 @@ function process_message($msg)
 
     if ($message['source'] == 'ig') {
        $igData = $ig->getTagMedia('skunenieki', 1);
-       error_log($igData);
+       error_log(json_encode($igData));
        $message = array(
            'source' => 'ig',
            'time'   => 12345,
