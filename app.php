@@ -40,11 +40,12 @@ function process_message($msg)
     if ($message['source'] == 'ig') {
        $igData = $ig->getTagMedia('skunenieki', 1);
        error_log(json_encode($igData));
+
        $message = array(
            'source' => 'ig',
-           'time'   => 12345,
-           'url'    => 'http://www.snicka.com/blog/wp-content/uploads/2014/05/Instagram-logo1.gif.png',
-           'author' => 'bot',
+           'time'   => $igData->data[0]->created_time,
+           'url'    => $igData->data[0]->images->standard_resolution->url,
+           'author' => $igData->data[0]->user->username,
        );
     }
 
