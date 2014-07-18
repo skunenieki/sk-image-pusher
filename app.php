@@ -32,7 +32,19 @@ function process_message($msg)
 {
     global $pusher;
     error_log('Triggering pusher event!');
-    $pusher->trigger('sk-image-display', 'display', $msg->body, null, false, true);
+    $message = json_decode($msg->body);
+
+    if ($message['source'] == 'ig') {
+       // get IG data here using IG API
+       $message = array(
+           'source' => 'ig',
+           'time'   => 12345,
+           'url'    => 'http://www.snicka.com/blog/wp-content/uploads/2014/05/Instagram-logo1.gif.png',
+           'author' => 'bot',
+       );
+    }
+
+    $pusher->trigger('sk-image-display', 'display', $message);
     sleep(60);
 
     $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
