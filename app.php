@@ -16,6 +16,8 @@ $parts   = explode('@', $parts[2]);
 $host    = $parts[1];
 $pass    = str_replace($user.':', '', $parts[0]);
 
+$pusher = new Pusher(getenv('PUSHER_KEY'), getenv('PUSHER_SECRET'), getenv('PUSHER_APP_ID'));
+
 $conn = new AMQPConnection($host, $port, $user, $pass, $vhost);
 $ch = $conn->channel();
 
@@ -28,7 +30,9 @@ $ch->queue_bind($queue, $exchange);
  */
 function process_message($msg)
 {
-    error_log($msg->body);
+    error_log('Triggering pusher event!')
+    $pusher->trigger('sk-image-display', 'display', $msg->body, null, false, true);
+    sleep(60);
 
     $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
 }
