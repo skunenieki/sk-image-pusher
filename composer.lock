@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "9c1a13edaf37c4d46d79b4f560595357",
+    "hash": "c91131d126d45693811132e87d20eff4",
     "packages": [
         {
             "name": "cosenary/instagram",
-            "version": "dev-master",
+            "version": "v2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cosenary/Instagram-PHP-API.git",
-                "reference": "d13b952feac0cccb3bface9a035fe5d7362f775d"
+                "reference": "fbf4c82e2cc7e9a7fd6f9fd7bba1fd2c506102a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cosenary/Instagram-PHP-API/zipball/d13b952feac0cccb3bface9a035fe5d7362f775d",
-                "reference": "d13b952feac0cccb3bface9a035fe5d7362f775d",
+                "url": "https://api.github.com/repos/cosenary/Instagram-PHP-API/zipball/fbf4c82e2cc7e9a7fd6f9fd7bba1fd2c506102a5",
+                "reference": "fbf4c82e2cc7e9a7fd6f9fd7bba1fd2c506102a5",
                 "shasum": ""
             },
             "require": {
@@ -25,8 +26,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Instagram": "lib/"
+                "psr-4": {
+                    "MetzWeb\\Instagram\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -46,25 +47,28 @@
                 "api",
                 "instagram"
             ],
-            "time": "2014-02-13 13:40:03"
+            "time": "2014-11-29 13:10:42"
         },
         {
             "name": "pusher/pusher-php-server",
-            "version": "v2.1.3",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pusher/pusher-php-server.git",
-                "reference": "4bb96195dd9109c1197aedc7d1d1de09cac02279"
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "79d755cc5d5b02b67779e2a40782fd6e3726657d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pusher/pusher-php-server/zipball/4bb96195dd9109c1197aedc7d1d1de09cac02279",
-                "reference": "4bb96195dd9109c1197aedc7d1d1de09cac02279",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/79d755cc5d5b02b67779e2a40782fd6e3726657d",
+                "reference": "79d755cc5d5b02b67779e2a40782fd6e3726657d",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
             },
             "type": "library",
             "autoload": {
@@ -87,30 +91,39 @@
                 "rest",
                 "trigger"
             ],
-            "time": "2012-12-22 01:50:13"
+            "time": "2015-05-13 11:01:46"
         },
         {
             "name": "videlalvaro/php-amqplib",
-            "version": "v2.2.6",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/videlalvaro/php-amqplib.git",
-                "reference": "6ef2ca9a45bb9fb20872f824f4c7c1518315bd3f"
+                "reference": "3eb257444961f1ca7e6415c6e6f3c3e7a8e1d3fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/videlalvaro/php-amqplib/zipball/6ef2ca9a45bb9fb20872f824f4c7c1518315bd3f",
-                "reference": "6ef2ca9a45bb9fb20872f824f4c7c1518315bd3f",
+                "url": "https://api.github.com/repos/videlalvaro/php-amqplib/zipball/3eb257444961f1ca7e6415c6e6f3c3e7a8e1d3fa",
+                "reference": "3eb257444961f1ca7e6415c6e6f3c3e7a8e1d3fa",
                 "shasum": ""
             },
             "require": {
                 "ext-bcmath": "*",
+                "ext-mbstring": "*",
                 "php": ">=5.3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
+            "suggest": {
+                "ext-sockets": "Use AMQPSocketConnection"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "PhpAmqpLib": ""
@@ -132,23 +145,63 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2013-12-22 12:49:53"
+            "time": "2015-06-16 08:18:39"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/91064290f5b53a09bdff1b939d7f69fb0e7531b5",
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2015-05-30 16:15:01"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "cosenary/instagram": 20
-    },
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
-        "hhvm": "3.*"
+        "php": ">=5.5"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

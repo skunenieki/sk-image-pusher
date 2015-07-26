@@ -1,9 +1,9 @@
 {
   "require": {
-    "hhvm": "3.*",
-    "videlalvaro/php-amqplib": "2.2.*",
-    "pusher/pusher-php-server": "2.*",
-    "cosenary/instagram": "dev-master"
-  },
-  "minimum-stability": "dev"
+    "php": ">=5.5",
+    "videlalvaro/php-amqplib": "^2.2",
+    "pusher/pusher-php-server": "^2.2",
+    "cosenary/instagram": "^2.3",
+    "vlucas/phpdotenv": "^2.0"
+  }
 }

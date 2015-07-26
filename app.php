@@ -1,8 +1,15 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require_once 'vendor/cosenary/instagram/instagram.class.php';
 
+try {
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
+} catch(Exception $e) {
+    //
+}
+
+use MetzWeb\Instagram\Instagram;
 use PhpAmqpLib\Connection\AMQPConnection;
 
 $exchange     = 'router';
@@ -28,11 +35,7 @@ $ch->queue_bind($queue, $exchange);
 
 $ig = new Instagram(getenv('INSTAGRAM_API_KEY'));
 
-/**
- * @param \PhpAmqpLib\Message\AMQPMessage $msg
- */
-function process_message($msg)
-{
+$ch->basic_consume($queue, $consumer_tag, false, false, false, false, function($msg) {
     global $pusher, $ig;
     error_log('Triggering pusher event!');
     $message = json_decode($msg->body, true);
@@ -53,9 +56,7 @@ function process_message($msg)
     sleep(60);
 
     $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
-}
-
-$ch->basic_consume($queue, $consumer_tag, false, false, false, false, 'process_message');
+});
 
 /**
  * @param \PhpAmqpLib\Channel\AMQPChannel $ch
